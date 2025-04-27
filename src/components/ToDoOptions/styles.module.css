@@ -1,0 +1,28 @@
+.todoOptions {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.todoOptions button {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.todoOptions button:hover {
+  background-color: #f5f5f5;
+}
+
+.todoOptions button.active {
+  background-color: #4caf50;
+  color: white;
+  border-color: #4caf50;
+}
+
+.todoOptions button.active:hover {
+  background-color: #45a049;
+}

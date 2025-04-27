@@ -1,0 +1,56 @@
+.layout {
+  min-height: 100vh;
+}
+
+.backButton {
+  margin-right: 16px;
+  width: 100px;
+  margin: 20px;
+}
+
+.title {
+  margin: 0 !important;
+  color: #1890ff;
+}
+
+.content {
+  padding: 24px;
+}
+
+.detailCard {
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.headerSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todoTitle {
+  margin: 0;
+  flex: 1;
+  margin-right: 16px;
+}
+
+.infoSection {
+  padding: 16px 0;
+}
+
+.infoItem {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.infoItem strong {
+  width: 150px;
+  margin-right: 16px;
+}
+
+.actionsSection {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+}

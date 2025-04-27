@@ -1,0 +1,116 @@
+.deadlineTimer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  background: #f7fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  animation: fadeIn 0.5s ease-out;
+  margin-top: auto;
+  width: 300px;
+  padding: 0.5rem;
+
+  @media (max-width: 450px) {
+    width: auto;
+  }
+}
+
+.deadlineContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.timerIcon {
+  color: #4299e1;
+  animation: pulse 2s infinite;
+}
+
+.timerText {
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.urgent {
+  color: #e53e3e;
+  animation: shake 0.5s ease-in-out;
+}
+
+.warning {
+  color: #d69e2e;
+}
+
+.normal {
+  color: #38a169;
+}
+
+.deadlineLabel {
+  color: #4a5568;
+  align-self: flex-end;
+  font-weight: 500;
+}
+
+.deadlineTime {
+  color: #38a169;
+  font-weight: 600;
+  text-align: center;
+}
+
+.overdue {
+  color: #e53e3e;
+  font-weight: 600;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .deadlineTimer {
+    padding: 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  .deadlineLabel {
+    font-size: 0.75rem;
+  }
+
+  .deadlineTime {
+    font-size: 0.875rem;
+  }
+}

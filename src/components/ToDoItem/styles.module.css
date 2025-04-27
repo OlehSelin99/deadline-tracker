@@ -1,0 +1,252 @@
+.todoItem {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.todoItem:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.todoContent {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.todoMain {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.todoText {
+  text-decoration: none;
+  color: #262626;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.todoText.completed {
+  text-decoration: line-through;
+  color: #8c8c8c;
+}
+
+.todoInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  flex: 1;
+}
+
+.deadline {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #8c8c8c;
+  font-size: 13px;
+}
+
+.actionButton {
+  color: #8c8c8c;
+}
+
+.actionButton:hover {
+  color: #1890ff;
+}
+
+.actionButton.danger:hover {
+  color: #ff4d4f;
+}
+
+.completeButton {
+  min-width: 180px;
+  height: 40px;
+  border-radius: 6px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.completeButton :global(.anticon) {
+  font-size: 16px;
+}
+
+.completeButton:global(.ant-btn-primary) {
+  background: #1890ff;
+  border-color: #1890ff;
+}
+
+.completeButton:global(.ant-btn-primary:hover) {
+  background: #40a9ff;
+  border-color: #40a9ff;
+}
+
+.completeButton:global(.ant-btn-default) {
+  background: #f5f5f5;
+  border-color: #d9d9d9;
+  color: #8c8c8c;
+}
+
+.completeButton:global(.ant-btn-default:hover) {
+  background: #fafafa;
+  border-color: #40a9ff;
+  color: #40a9ff;
+}
+
+.checkbox :global(.ant-checkbox-inner) {
+  border-radius: 4px;
+}
+
+.checkbox :global(.ant-checkbox-checked .ant-checkbox-inner) {
+  border-color: #1890ff;
+  background-color: #1890ff;
+}
+
+.completed .todoText {
+  text-decoration: line-through;
+  color: #a0aec0;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.checkbox.checked {
+  background: #4299e1;
+}
+
+.checkbox.checked::after {
+  content: '✓';
+  position: absolute;
+  color: white;
+  font-size: 14px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.editButton,
+.deleteButton {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: transparent;
+}
+
+.editButton {
+  color: #4299e1;
+}
+
+.deleteButton {
+  color: #e53e3e;
+}
+
+.editButton:hover,
+.deleteButton:hover {
+  transform: scale(1.1);
+}
+
+.editInput {
+  flex: 1;
+  margin: 0 1rem;
+  padding: 0.5rem;
+  border: 2px solid #4299e1;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.editInput:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.15);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .todoItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .deadline {
+    margin: 0.5rem 0;
+  }
+}
+
+.editing {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 8px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e6f7ff;
+}
+
+.editForm {
+  width: 100%;
+}
+
+/* Animation for editing mode */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.editing {
+  animation: fadeIn 0.3s ease-out;
+}
